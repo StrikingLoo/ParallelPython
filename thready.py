@@ -1,5 +1,5 @@
 import multiprocessing
-from PIL import Image, ImageDraw
+
 import time
 def slowFn(n):
 	sumTotal = sum([1 for _ in range(n)])
