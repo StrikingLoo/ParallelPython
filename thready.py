@@ -17,7 +17,7 @@ if __name__ == '__main__':
     res.append(str(e-b)) 
     b = time.time()
     for i in range(m):
-    	slown(n)
+    	slowFn(n)
     e = time.time()
     res.append(str(e-b)) 
     print res
