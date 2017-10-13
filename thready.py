@@ -6,21 +6,22 @@ def slowFn(n):
 
 
 if __name__ == '__main__':
-    lista = []
-    res = []
-    b = time.time()
-    m,n = 500,100000
-    for i in range(m):
-	p = multiprocessing.Process(target=slowFn,args=(n,))
-	p.start()
-    e = time.time()
-    res.append(str(e-b)) 
-    b = time.time()
-    for i in range(m):
-    	slowFn(n)
-    e = time.time()
-    res.append(str(e-b)) 
-    print res
+    for m in [10,100,1000,10000]:
+	for n in [10,100,1000,10000,100000]:
+		res = []		
+		b = time.time()    		
+		for i in range(m):
+			p = multiprocessing.Process(target=slowFn,args=(n,))
+			p.start()
+    			e = time.time()
+    		res.append(str(e-b)) 
+    		b = time.time()
+    		for i in range(m):
+    			slowFn(n)
+   		e = time.time()
+    		res.append(str(e-b)) 
+    		print res
+    
 
 
 '''
